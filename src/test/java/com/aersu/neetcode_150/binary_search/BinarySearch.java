@@ -2,6 +2,8 @@ package com.aersu.neetcode_150.binary_search;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 public class BinarySearch {
     public static int search(int[] nums, int target){
         //my solution
@@ -32,6 +34,13 @@ public class BinarySearch {
         }
         return -1;
     }
+
+    //using built-in function
+    public int searchBuiltIn(int[] nums, int target) {
+        int index = Arrays.binarySearch(nums, target);
+        return index >= 0 ? index : -1;
+    }
+
     @Test
     void test() {
         //expect 3
