@@ -56,7 +56,7 @@ Constraints:
     public int removeElement(int[] nums, int val) {
         //based on constraints val cannot be bigger than 50
 
-//use a second pointer variable to keep track of index from the end of array
+        //use a second pointer variable to keep track of index from the end of array
         int count = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == val) {
