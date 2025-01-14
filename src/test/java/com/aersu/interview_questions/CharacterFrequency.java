@@ -26,10 +26,33 @@ public class CharacterFrequency {
         }
     }
 
+
+    public static void displayFrequency2(String str){
+        String[] split = str.split("");
+
+        Map<String,Integer> map = new HashMap<>();
+
+        for (String each : split) {
+            //if map contains key, update the value by 1
+            if(map.containsKey(each)){
+                map.put(each,map.get(each)+1);
+            }else{
+                map.put(each,1); //add for the first time
+            }
+        }
+
+        System.out.println(map); //might implement display in certain way using for loop
+    }
+
     @Test
     void test1() {
 
         displayFrequency("Osmosis");
+    }
 
+    @Test
+    void test2() {
+
+        displayFrequency2("Equilibrium");
     }
 }
