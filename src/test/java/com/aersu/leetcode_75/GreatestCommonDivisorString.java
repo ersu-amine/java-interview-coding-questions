@@ -25,7 +25,9 @@ Given two strings str1 and str2, return the largest string x such that x divides
     Output: ""
 
      */
-    public String gcdOfStrings(String str1, String str2) {
+
+    /// my solution using substring
+    public String gcdOfStrings2(String str1, String str2) {
         //split with same size as second string
         String str3 = str1.substring(0, str2.length());
         String remainder = str1.substring(str2.length());
@@ -41,6 +43,20 @@ Given two strings str1 and str2, return the largest string x such that x divides
         }
 
         return result;
+    }
+
+    //leetcode solution
+    public String gcdOfStrings(String str1, String str2) {
+        // Check if concatenated strings are equal or not, if not return ""
+        if (!(str1 + str2).equals(str2 + str1))
+            return "";
+        // If strings are equal than return the substring from 0 to gcd of size(str1), size(str2)
+        int gcd = gcd(str1.length(), str2.length());
+        return str1.substring(0, gcd);
+    }
+
+    private int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
 
     @Test
