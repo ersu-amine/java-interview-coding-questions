@@ -26,8 +26,21 @@ Explanation: In this case, no transactions are done and the max profit = 0.
      */
 
     public int maxProfit(int[] prices) {
+        int max = 0;
+        int min = prices[0];
+        int profit = 0; //difference between max and min
+        for (int i = 0; i < prices.length; i++) {
+            int[] arr1 = new int[2];
+            for (int j = i; j < prices.length; j++) {
+                if (max < prices[j] - min){
+                    max = prices[j] - min;
 
-        return 0;
+                }
+            }
+
+        }
+
+        return profit;
     }
 
     @Test
