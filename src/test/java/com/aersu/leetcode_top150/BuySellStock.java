@@ -2,6 +2,9 @@ package com.aersu.leetcode_top150;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class BuySellStock {
     /*
     You are given an array prices where prices[i] is the price of a given stock on the ith day.
@@ -9,8 +12,6 @@ public class BuySellStock {
 You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
 
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
-
-
 
 Example 1:
 
@@ -26,25 +27,33 @@ Explanation: In this case, no transactions are done and the max profit = 0.
      */
 
     public int maxProfit(int[] prices) {
-        int max = 0;
-        int min = prices[0];
+        int min = Integer.MAX_VALUE;
         int profit = 0; //difference between max and min
-        for (int i = 0; i < prices.length; i++) {
-            int[] arr1 = new int[2];
-            for (int j = i; j < prices.length; j++) {
-                if (max < prices[j] - min){
-                    max = prices[j] - min;
 
-                }
+        for (int j = 0; j < prices.length; j++) {
+            if (min > prices[j]) {
+                min = prices[j];
+            }else if (profit< prices[j] - min){
+                //update profit
+                profit = prices[j] - min;
             }
-
         }
+
 
         return profit;
     }
 
     @Test
     void test1() {
+
+        System.out.println(maxProfit(new int[]{7, 6, 4, 3, 1}));
+
+    }
+
+    @Test
+    void test2() {
+
+        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
 
     }
 }
