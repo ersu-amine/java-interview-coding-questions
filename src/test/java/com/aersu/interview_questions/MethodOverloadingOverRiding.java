@@ -2,7 +2,7 @@ package com.aersu.interview_questions;
 
 import org.junit.jupiter.api.Test;
 
-public class MehtodOverloadingOverRiding extends Example {
+public class MethodOverloadingOverRiding extends Example {
     /*
     Code for Overriding and Overloading:
 
