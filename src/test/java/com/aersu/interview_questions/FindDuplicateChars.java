@@ -32,10 +32,13 @@ public class FindDuplicateChars {
         //otherwise it will return Object[]
         String[] array = duplicates.toArray(new String[0]);
         System.out.println(String.join("", array));
+
+        return String.join("", array);
     }
 
     @Test
     void test() {
         Assertions.assertEquals("pa",duplicatedCharacters("papatya"));
     }
+
 }
